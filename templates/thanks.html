@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<html>
+    <head>
+        <title>{{ title }} - GOSH map</title>
+    </head>
+    <body>
+        <h1>Thanks for contributing!</h1>
+        <p> You've added the following point to the map:</p>
+        
+        <table>
+        {% for key, value in result.items() %}
+           {% if key in labels %}
+             <tr>
+                <th> {{ key }} </th>
+                <td> {{ value }} </td>
+             </tr>
+            {% endif %}
+        {% endfor %}
+        </table>
+        <p>
+
+        </p>
+    </body>
+</html>
+{% endblock %}

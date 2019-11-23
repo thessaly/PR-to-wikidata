@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Contribute to the map</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.name.label }}<br>
+            {{ form.name(size=32) }}
+        </p>
+        <p>
+            {{ form.city.label }}<br>
+            {{ form.city(size=32) }}
+        </p>
+        <p>
+            {{ form.type.label }}
+            {{ form.type }}
+        </p>
+        <p>
+            {{ form.area.label }}
+            {{ form.area}}
+        </p>
+        <p>
+            {{ form.email.label }}<br>
+            {{ form.email(size=32) }}
+        </p>
+        <p>
+            {{ form.link.label }}<br>
+            {{ form.link(size=32) }}
+        </p>
+        <p>
+            {{ form.gosh.label }}<br>
+            {{ form.gosh }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

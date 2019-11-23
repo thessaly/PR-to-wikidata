@@ -1,0 +1,19 @@
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} - GOSHmap</title>
+      {% else %}
+      <title>Welcome to GOSHmap</title>
+      {% endif %}
+    </head>
+    <body>
+        <div>
+          GOSHmap
+            <a href="/">Home</a>
+            <a href="/form">Form</a>
+        </div>
+
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
