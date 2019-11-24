@@ -5,15 +5,19 @@
       {% else %}
       <title>Welcome to GOSHmap</title>
       {% endif %}
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <div>
-          GOSHmap
-            <a href="/">Home</a>
-            <a href="/form">Form</a>
-        </div>
+      <div class="collapse navbar-collapse navbar-inverse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="/form">Contribute</a></li>
+      </ul>
+    </div>
 
-        {% block content %}
+      {% block content %}
         {% endblock %}
     </body>
 </html>

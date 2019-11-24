@@ -1,8 +1,9 @@
 import base64
 from github import Github
-from dotenv import load_dotenv
-load_dotenv()
 import os, random
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def update_csv(row):
     g = Github(os.getenv("GH_TOKEN"))
