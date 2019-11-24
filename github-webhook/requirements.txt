@@ -1,0 +1,4 @@
+flask
+PyGithub
+gunicorn
+python-dotenv
