@@ -8,8 +8,7 @@ class ProjectForm(FlaskForm):
     city = StringField('City of origin', validators=[DataRequired()])
     type = SelectField('Which option describes this item better?', choices=[('project', 'project'), ('organization', 'organization'), ('business', 'business'), ('nonprofit', 'nonprofit'), ('university research group', 'university research group'),('community', 'community'),('other', 'other')])
     area = SelectField('Field of Work', choices = [('Education','Education'),('Education','Art'),('Education','Social innovation'),('D','Community Science'),('Education','Academic research')])
-    email = TextField("Email",[validators.Required("Please enter your email address."),
-      validators.Email("Please enter your email address.")])
     link = StringField('Link to website or repository', validators=[URL(), DataRequired()])
-    gosh = BooleanField('Is part of GOSH community?')
+    coords = StringField('Geocoordinates', validators=[DataRequired()])
+    gosh = SelectField('Is part of GOSH community?', choices=[('yes', 'yes'), ('no','no')])
     submit = SubmitField('Submit')
