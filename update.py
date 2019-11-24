@@ -2,7 +2,7 @@ import base64
 from github import Github
 from dotenv import load_dotenv
 load_dotenv()
-import os
+import os, random
 
 def update_csv(row):
     g = Github(os.getenv("GH_TOKEN"))
@@ -22,10 +22,11 @@ def update_csv(row):
     new_content = encodedContent + encodedString
     # Creates target branch
     source_branch = 'master'
-    target_branch = 'newfeature'
+    hash = str(random.getrandbits(128))
+    target_branch = hash
     sb = repo.get_branch(source_branch)
     repo.create_git_ref(ref='refs/heads/' + target_branch, sha=sb.commit.sha)
     path = file.path
     sha = file.sha
-
-    return repo.update_file(path, 'testing pygithub', new_content, sha, branch=target_branch)
+    repo.update_file(path, 'testing pygithub', new_content, sha, branch=target_branch)
+    return repo.create_pull(title="New data point", head=target_branch, base=source_branch, body="")
